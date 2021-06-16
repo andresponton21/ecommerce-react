@@ -1,19 +1,14 @@
 import React from 'react'
 import lupe from 'img/svg/lupe.svg'
 import onestars from 'img/svg/onestars.svg'
-import twostars from 'img/svg/twostars.svg'
-import threestars from 'img/svg/threestars.svg'
-import fourstars from 'img/svg/fourstars.svg'
+import twostars from './img/svg/twostars.svg'
+import threestars from 'img/circle.svg'
+import fourstars from 'img/fourstars.svg'
 import fivestars from 'img/svg/fivestars.svg'
 import instagram from 'img/svg/insta-white.svg'
 import facebookIcon from './assets/SVG/face-transparent.svg'
 import tweeter from 'file:///Users/andresp/Desktop/humber%20summer/rocco/ecommerce-react/src/img/svg/tweeter-white.svg'
-
-
-
-
-
-//import bike from 'img/bike.jpg'
+import bike from 'img/bike.jpg'
 //import logo from 'img/svg/logo.svg'
 
 
@@ -93,7 +88,7 @@ const App = () => {
               <li>
                 <input type="radio" className="radio radio-star" name="rating" value="five" id="aboveFive"/>
                 <label for="aboveFive" className="rating-label">
-                 <img className="star" src={fivestars} alt="star5"/>
+                 <img className="star" src={bike} alt="star5"/>
                 </label>
               </li>
               <li>
@@ -112,6 +107,9 @@ const App = () => {
                 <input type="radio" className="radio radio-star" name="rating" value="two" id="aboveTwo"/>
                 <label for="aboveTwo" className="rating-label">
                  <img src={twostars} className="star" alt="star2"/>
+                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="red" width="2em">
+                  <circle cx="50" cy="50" r="50"/>
+                </svg>
                 </label>
               </li>
               <li>
