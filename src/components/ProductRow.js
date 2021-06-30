@@ -1,5 +1,6 @@
 import React from 'react'
 import bike from 'img/bike.jpg'
+import fourstars from 'img/svg/fourstars.svg'
 
 
 
@@ -22,7 +23,7 @@ const ProductRow = ({data}) => {
       
         <dt>Rating</dt>
           <dt>
-            <img className="star" src="" alt="stars"/>
+            <img className="star" src={fourstars} alt="stars"/>
             
           </dt>
         <a className="see-more" href={linkTo}>see product</a>

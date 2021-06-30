@@ -217,7 +217,7 @@ const productsData = [
       {
         id: 10,
         name:'Kettlebells',
-        price: { before: 150, after: 119 },
+        price: { before: 150, after: 129 },
         filters: [
            {
            filterName:`Colours`,
@@ -238,7 +238,7 @@ const productsData = [
       {
         id: 11,
         name:'Incline Bench',
-        price: { before: 89, after: 69 },
+        price: { before: 89, after: 79 },
         filters: [
            {
            filterName:`Colours`,
@@ -260,7 +260,7 @@ const productsData = [
         {
           id: 12,
           name:'Ellipticals',
-          price: { before: 780, after: 619 },
+          price: { before: 780, after: 715 },
           filters: [
               {
               filterName:`Features`,
@@ -281,7 +281,7 @@ const productsData = [
         {
           id: 13,
           name:'Speed Bag',
-          price: { before: 150, after: 90 },
+          price: { before: 150, after: 98 },
           filters: [
               {
               filterName:`Colour`,
@@ -303,7 +303,7 @@ const productsData = [
         {
           id: 14,
           name:'Rowers',
-          price: { before: 2140, after: 1240 },
+          price: { before: 2140, after: 1541 },
           filters: [
               {
               filterName:`Features`,
@@ -324,7 +324,7 @@ const productsData = [
         {
           id: 15,
           name:'Plates',
-          price: { before: 39, after: 29 },
+          price: { before: 39, after: 35 },
           filters: [
               {
               filterName:`Colours`,
@@ -345,7 +345,7 @@ const productsData = [
         {
           id: 16,
           name:'Ab wheel',
-          price: { before: 99, after: 79 },
+          price: { before: 99, after: 81 },
           filters: [
              {
              filterName:`Colours`,
@@ -365,7 +365,7 @@ const productsData = [
         {
           id: 17,
           name:'Push Up Bar',
-          price: { before: 89, after: 39 },
+          price: { before: 89, after: 54 },
           filters: [
              {
              filterName:`Colours`,
@@ -387,7 +387,7 @@ const productsData = [
         {
           id: 18,
           name:'Lifting belt',
-          price: { before: 109, after: 99 },
+          price: { before: 109, after: 98 },
           filters: [
              {
              filterName:`Material`,
@@ -409,7 +409,7 @@ const productsData = [
         {
           id: 19,
           name:'Aerobic Steps',
-          price: { before: 399, after: 250 },
+          price: { before: 399, after: 258 },
           filters: [
               {
               filterName:`Colours`,

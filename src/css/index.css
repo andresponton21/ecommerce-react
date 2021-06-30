@@ -236,7 +236,7 @@ ins{
   margin-bottom: 1em;
   position: relative;
 }
-.product .see-more {
+.see-more {
   color: white;
   text-decoration: none;
   background-color:var(--primary-background);
@@ -257,6 +257,7 @@ ins{
 }
 .form-options{
   margin-bottom: 3em;
+  margin-top: 0.75em;
 }
 .add-to-cart{
   background: url(img/svg/add-to-cart-button.svg) no-repeat;
