@@ -4,13 +4,7 @@ import lupe from 'img/svg/lupe.svg'
 
 
 const Header = () => {
-  const handleQueryChange = (event) => {
-
-    setSearchState({
-      ...searchState,
-      query: event.target.value
-    })
-  }
+ 
 
   return (
     <div className="top-head">
@@ -39,7 +33,7 @@ const Header = () => {
       
       <form className="search">
         <label>Search:
-          <input type="search" name="find" id="find" className="search-input" autoComplete="off"  placeholder="Look for a product" onChange={handleQueryChange}/>
+          <input type="search" name="find" id="find" className="search-input" autoComplete="off"  placeholder="Look for a product" />
         </label>
         <button type="button" className="search-button"><img className="magnifier" src={lupe} alt="magnifier" /></button>
       </form>

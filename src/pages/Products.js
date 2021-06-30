@@ -18,13 +18,16 @@ const Products = ({data}) => {
     sort: () => {}
   })
 
-  
+  //console.log(query)
   const {minPrice, query, filterCategory, sort, ratingStar} = searchState
 
 
   
   const searchResult = data.filter(({price}) => price.after >= minPrice)
       .filter(({name}) => name.toUpperCase().includes(query.toUpperCase()))
+      .filter((product) => filterCategory.length === 0 || 
+        product.category.filter((cat) => filterCategory.includes(cat)).length > 0)
+      .filter((product) => product.rating.includes(ratingStar)) 
       .sort(sort)
 
   
@@ -59,10 +62,29 @@ const Products = ({data}) => {
     })
   }
 
+  const handleCategoryChange = (event) =>  {
+  
+    const newProductCategory = event.target.form.elements[event.target.name]
+                          
+    setSearchState({
+      ...searchState,
+      filterCategory : [...newProductCategory]
+        .filter((prod) => prod.checked)
+        .map((prod) => prod.value)
+    })
+  }
+  const handleRatingChange = (event) => {
+
+    setSearchState({
+      ...searchState,
+      ratingStar: event.target.value
+    })
+  }
+
 
   return (
 
-    <Layout onChange={handleQueryChange}>
+    <Layout>
       
       <header className="heading">
        <h1>Sale on Cross Fit Items</h1>
@@ -72,7 +94,7 @@ const Products = ({data}) => {
         <h2>Filters</h2>
 
         <div className="filter-options">
-          <fieldset className="filter-category">
+          <fieldset className="filter-category" onChange={handleCategoryChange}>
             <legend>Categories</legend>
             <ul className="filter-list">
               <li><input type="checkbox" className="checkbox" name="category" value="conditioning" id="conditioning"/> <label htmlFor="conditioning" className="check-button">Conditioning</label></li>
@@ -89,7 +111,8 @@ const Products = ({data}) => {
             <input type="range" name="price" className="input-slider" id="filterPrice"  min="0" max="620" step="1" onChange={handlePriceChange}/>
             <output htmlFor="filterPrice" className="output-price">{minPrice}</output>
           </fieldset>
-          <fieldset id="filterRating">
+
+          <fieldset id="filterRating" onChange={handleRatingChange}>
             <legend>Ratings</legend>
             <ol className="filter-list">
               <li>

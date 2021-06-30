@@ -4,17 +4,11 @@ import Header from 'components/Header'
 import Footer from 'components/Footer'
 
 const Layout = ({children}) => {
-  const handleQueryChange = (event) => {
-
-    setSearchState({
-      ...searchState,
-      query: event.target.value
-    })
-  }
+  
 
   return (
     <>
-      <Header onChange={handleQueryChange} />
+      <Header />
       
       <main className="products">
         {children}
