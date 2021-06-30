@@ -1,0 +1,34 @@
+@media only screen and (min-width: 90em) {
+    html {
+        --primary-background: #570cc7;    /* main colour */
+        --secondary-background: #361275;    /* variant */
+        --third-background: #6f24f5;     /* for text or icons */
+        --fourth-background: #190836;
+        --fifth-background: #6521db;
+        --alt-color: #FFC72F;
+        --alt-color2: #F5D951;
+        --font-color1:#8E829B;
+        --pad-and-gap:1em;	
+        --pad-and-gap-half:calc(var(--pad-and-gap)/2);
+        --price-color:#BC0B28;
+    }
+    /* header styling */
+    .menu{
+        margin-right: 25em;
+    }
+    /* filter styling */
+    .filter-options{
+        display: flex-start;
+    } 
+    /* product styling */
+    .results{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: "sh sh sh sh";
+    }
+    .subheading{
+        grid-area: sh;
+    }
+    .search-input{
+        height: 3em;
+    }
+}

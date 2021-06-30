@@ -18,7 +18,7 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
         use: ['file-loader']
       }, {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: ['file-loader']
       }
     ]
@@ -43,6 +43,7 @@ module.exports = {
       components: path.resolve(__dirname, 'src/components/'),
       css: path.resolve(__dirname, 'src/css/'),
       img: path.resolve(__dirname, 'src/img/'),
+      pages: path.resolve(__dirname, 'src/pages/'),
     }
   }
 }

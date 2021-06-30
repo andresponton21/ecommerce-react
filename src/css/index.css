@@ -38,11 +38,12 @@ a {
 }
 
 .logo {
-  background: url(img/svg/logo.svg);
+  
   grid-area: logo;
   background-repeat: no-repeat;
   margin-bottom: 0.25em;
   width: 10em;
+  object-fit: contain;
 }
 .nav-toggle {
   grid-area: toggle;
@@ -202,16 +203,17 @@ input:checked + .radio-button{
   padding-left: 1.5em;
   cursor: pointer;
 } 
-input:checked + .check-button{
-  background: url(img/svg/checked-check.svg) no-repeat left;
+input:checked+ .check-button{
+  background: url(img/svg/checkedbutton.svg) no-repeat left;
   padding-left: 1.5em;
   cursor: pointer;
 }
 .check-button{
-  background: url(img/svg/checkb.svg) no-repeat left;
+  background: url(img/svg/checkbutton.svg) no-repeat left;
   padding-left: 1.5em;
   cursor: pointer;
 }
+
 .rating-label{
   cursor: pointer;
 }
