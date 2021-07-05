@@ -1,11 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 import logo from 'img/logo.png'
 import lupe from 'img/svg/lupe.svg'
 
 
-const Header = () => {
+const Header = ({search, setSearch}) => {
+  const {query} = search
  
+  const handleQueryChange = (event) => {
 
+    setSearch({
+      ...search,
+      query: event.target.value
+    })
+  }
+  
   return (
     <div className="top-head">
     <header className="page-header">
@@ -33,7 +41,7 @@ const Header = () => {
       
       <form className="search">
         <label>Search:
-          <input type="search" name="find" id="find" className="search-input" autoComplete="off"  placeholder="Look for a product" />
+          <input type="search" name="find" id="find" className="search-input" autoComplete="off"  placeholder="Look for a product" onChange={handleQueryChange}/>
         </label>
         <button type="button" className="search-button"><img className="magnifier" src={lupe} alt="magnifier" /></button>
       </form>

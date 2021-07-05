@@ -18,7 +18,7 @@ const Products = ({data}) => {
     sort: () => {}
   })
 
-  //console.log(query)
+  
   const {minPrice, query, filterCategory, sort, ratingStar} = searchState
 
 
@@ -82,10 +82,9 @@ const Products = ({data}) => {
     
   }
 
-
   return (
 
-    <Layout>
+    <Layout search={searchState} setSearch = {setSearchState}>
       
       <header className="heading">
        <h1>Sale on Cross Fit Items</h1>

@@ -84,6 +84,10 @@ a {
   padding-top: var(--pad-and-gap-half);
 
 }
+.products{
+  flex-grow: 1;
+}
+
 .search-input{
 font-size: var(--pad-and-gap);
   background-color: lightgrey;
@@ -323,8 +327,16 @@ body .page-footer{
 .media img{
   height: 2.5em;
 }
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 .page-footer{
   font-size: 0.8em;
+}
+.footer-cont, .top-head{
+  display: flow-root;
 }
 .pagination {
   text-align: center;
