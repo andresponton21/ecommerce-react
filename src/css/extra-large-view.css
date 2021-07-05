@@ -19,6 +19,7 @@
     /* filter styling */
     .filter-options{
         display: flex-start;
+        min-width: 120em;
     } 
     /* product styling */
     .results{
