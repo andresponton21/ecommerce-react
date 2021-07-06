@@ -1,9 +1,9 @@
 import React from 'react'
-import bike from 'img/bike.jpg'
 import fourstars from 'img/svg/fourstars.svg'
+import Image from 'components/Image'
 
-
-
+ 
+ 
 const ProductRow = ({data}) => {
   const {id, name, price, filters, photo, description, linkTo, category, rating} = data
  
@@ -14,7 +14,7 @@ const ProductRow = ({data}) => {
         <article className="product">
         <header>
         <a className="product-name" href="">
-        <img className="images" src={bike} alt={name}/>
+        <Image className="images" src={photo} alt={name} width="32" height="32"/>
         </a>
         <a className="product-name" href={linkTo}>
         <h3>{name}</h3></a>

@@ -1,25 +1,43 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ProductRow from 'components/ProductRow'
+// import { Pagination } from 'antd'
+// import 'antd/dist/antd.css'
+import PaginationComp from 'components/PaginationComp'
 
 const SearchResults = ({result}) => {
 
-  const theProducts = result.slice(0,4).map((product) => <ProductRow key={product.id} data={product} />)
+  const [currPage, setCurrPage] = useState(1)
+  const pageSize = 4
+
+  const startRow = (currPage - 1) * pageSize
+  const endRow = startRow + pageSize
+  const totalPages = Math.ceil(result.length / pageSize)
+
+  const theProducts = result.slice(startRow, endRow).map((product) => <ProductRow key={product.id} data={product} />)
+
+  const updatePage = (page) => {
+    if (page < 0) 
+      setCurrPage(1)
+    else if (page > totalPages) 
+      setCurrPage(totalPages)
+    else 
+      setCurrPage(page)
+  }
   
   return (
     <>
         <section  className="results">
-          {theProducts}
+          {(theProducts.length) ? theProducts : `No matching Results`}
         </section>
 
         <nav aria-label="Pagination" className="pagination">
-        <p className="page-number">{theProducts.length} {(theProducts.length === 1) ? `product` : `products`} of {result.length}</p>
-        <ol className="pages">
-          <li><a href="#" aria-label="Current Page, Page 1" aria-current="true">1</a></li>
-          <li><a href="#" aria-label="Page 2">2</a></li>
-          <li><a href="#" aria-label="Page 3">3</a></li>
-          <li><a href="#" aria-label="Page 4">4</a></li>
-          <li><a href="#" aria-label="Page 5">5</a></li>
-        </ol>
+        <p className="page-number">
+          {/* <button onClick={()=> updatePage(currPage-1)} disabled={(currPage === 1 )?`disabled`:``}>prev</button>
+          Showing {(theProducts.length === 1) ? `product` : `products`} {startRow + 1} to {Math.min(endRow, result.length)} of {result.length}
+          <button onClick={()=> updatePage(currPage+1)} disabled={(currPage === totalPages )?`disabled`:``} >next</button> */}
+        </p>
+        <PaginationComp defaultCurrent={currPage} total={result.length} defaultPageSize={pageSize} onChange={(page) => setCurrPage(page)} />
+          <p></p>
         </nav>
     </>
   )

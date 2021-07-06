@@ -271,7 +271,7 @@ const productsData = [
               filterOptions:[ `S`, `M`, `L` ]
              },  
            ],
-          photo: `ellipticals`,
+          photo: `elliptical`,
           description: `These help you shed fat, improve your heart health, and boost your muscle endurance. 
           Your legs will get a serious workout.`,
           linkTo:`Pages/product.html`,

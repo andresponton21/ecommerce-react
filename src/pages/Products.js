@@ -40,13 +40,7 @@ const Products = ({data}) => {
     })
   }
 
-  const handleQueryChange = (event) => {
-
-    setSearchState({
-      ...searchState,
-      query: event.target.value
-    })
-  }
+  
   const handleSortChange = ({target}) => {
 
     let sorting
