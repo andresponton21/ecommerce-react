@@ -16,7 +16,7 @@ const productsData = [
       photo: `ropes`,
       description: `You'll train the muscles in your upper back, arms, abs, back, 
       glutes and if you incorporate jumps, lunges, and squats`,
-      linkTo:`Pages/product.html`,
+      linkTo:`../pages/Product.js`,
       category: ['conditioning', 'calisthenics'],
       rating: 'four'
     }, 

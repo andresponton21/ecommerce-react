@@ -1,30 +1,32 @@
-import React, {useState, useContext} from 'react'
+import React, {useContext} from 'react'
+import {useParams} from 'react-router-dom'
+import UserContext from 'contexts/user'
+import Layout from 'components/Layout'
+import Header from 'components/Header'
+import Footer from 'components/Footer'
 import logo from 'img/logo.png'
 import lupe from 'img/svg/lupe.svg'
 import {Link} from 'react-router-dom'
-import UserContext from 'contexts/user'
-import Cartrow from 'components/Cartrow'
+import SingleProductRow from 'components/SingleProductRow'
+
+//import 'css/product.css'
 
 
 
-const Header = ({search, setSearch}) => {
-  const {query} = search
- 
-  const handleQueryChange = (event) => {
+const Product = () => {
 
-    setSearch({
-      ...search,
-      query: event.target.value
-    })
-  }
+  const {slug} = useParams()
+  //console.log(slug)
 
-  // const cartProduct = useContext(UserContext)
-  // const cartArr = cartProduct.userCart
+  const newProduct = useContext(UserContext)
   
-  // const cartProd = cartArr.map(prod => <Cartrow key={prod.id} data={prod} />)
-  // console.log(cartProd)
+  const productArray = newProduct.updateProduct(slug)
+  const singleProduct = productArray.map(prod => <SingleProductRow key={prod.id} data={prod} />)
+  
   
   return (
+    
+  <div className="layout">
     <div className="top-head">
     <header className="page-header">
       
@@ -51,7 +53,7 @@ const Header = ({search, setSearch}) => {
       
       <form className="search">
         <label>Search:
-          <input type="search" name="find" id="find" className="search-input" autoComplete="off"  placeholder="Look for a product" onChange={handleQueryChange}/>
+          <input type="search" name="find" id="find" className="search-input" autoComplete="off"  placeholder="Look for a product" />
         </label>
         <button type="button" className="search-button"><img className="magnifier" src={lupe} alt="magnifier" /></button>
       </form>
@@ -63,7 +65,17 @@ const Header = ({search, setSearch}) => {
       </ul>
     </header>
   </div>
+
+ 
+  <section  className="products">
+    <Link to={`/`}>Go Back </Link>
+    {singleProduct}
+  </section>
+  <Footer />
+   
+  </div>
+      
   )
 }
 
-export default Header
+export default Product

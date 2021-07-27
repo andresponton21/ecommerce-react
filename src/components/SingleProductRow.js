@@ -7,39 +7,39 @@ import UserContext from 'contexts/user'
 
  
  
-const ProductRow = ({data}) => {
-
-  
+const SingleProductRow = ({data}) => {
   const {id, name, price, filters, photo, description, linkTo, category, rating} = data
-  
 
   const cartProduct = useContext(UserContext)
   const handleAddCart = cartProduct.handleAddCart
   const handleAddFav = cartProduct.handleAddFav
+
  
   return (
     <>
-        <h2 className="subheading">Results</h2>
+        <h2 className="subheading">{name}</h2>
 
-        <article className="product">
-        <header>
+        <article className="product singlep">
+        
         
        
-        <Link to={`/product/${name}`}> <Image className="images" src={photo} alt={name} width="32" height="32"/></Link>
+        <Image className="" src={photo} alt={name} />
+
+        <div className="grid-opt">
        
-        
-        <Link to={`/product/${name}`}> <h3>{name}</h3></Link>
+        <a className="product-name" href={linkTo}>
+        <h3>{name}</h3></a>
         <data value="119"><del>${price.before.toFixed(2)}</del> <ins>${price.after.toFixed(2)}</ins></data>
-        <p>{description}</p>
+        <p className="desc">{description}</p>
       
         <dt>Rating</dt>
           <dt>
             <img className="star" src={fourstars} alt="stars"/>
             
           </dt>
-          <Link to={`/product/${name}`} className="see-more"> see product</Link>
-    </header>
-    <form className="form-options">
+        
+    
+      <form className="form-options">
         <fieldset className="product-options">
         <legend>{filters[0].filterName}</legend>
         <ul>
@@ -61,9 +61,11 @@ const ProductRow = ({data}) => {
         <button type="button" className="add-to-cart" onClick={(event) => handleAddCart(event, name)}></button>
         <button type="button" className="add-favourite" onClick={(event) => handleAddFav(event, name)}></button>
     </footer> 
+
+    </div>
     </article>
     </>
   )
 }
 
-export default ProductRow
+export default SingleProductRow

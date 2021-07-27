@@ -146,5 +146,16 @@
         background-image: 
     linear-gradient(var(--third-background), var(--primary-background),var(--secondary-background));
     }
+    .singlep{
+        background-color: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        font-size: larger;
+        grid-gap: 2em;
+        margin-bottom: 1em;
+    }
+    .desc{
+        font-size: 3em;
+    }
   
 }

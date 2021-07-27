@@ -39,7 +39,7 @@ p{
 }
 .logo {
     grid-area: logo;
-    background-image: url(../assets/SVG/logo.svg);
+    
     background-repeat: no-repeat;
     width: 8em;
 }
@@ -118,17 +118,17 @@ fieldset{
     display: none;
 }
 .radio-button{
-    background: url(../assets/SVG/radiobuton.svg) no-repeat left;
+    background: url(img/svg/radiobuton.svg) no-repeat left;
     padding-left: 1.5em;
     cursor: pointer;
 } 
 input:checked + .radio-button{
-    background: url(../assets/SVG/unchecked-readio.svg) no-repeat left;
+    background: url(img/svg/unchecked-readio.svg) no-repeat left;
     padding-left: 1.5em;
     cursor: pointer;
 } 
 .check-button{
-    background: url(../assets/SVG/checkb.svg) no-repeat left;
+    background: url(img/svg/checkbutton.svg) no-repeat left;
     padding-left: 1.5em;
     cursor: pointer;
 }
@@ -183,7 +183,7 @@ dt{
     color: black;
 }
 .add-to-cart{
-    background: url(../assets/SVG/add-to-cart-button.svg) no-repeat;
+    background: url(img/svg/add-to-cart-button.svg) no-repeat;
     height: 4em;
     width: 12.5em;
     border: none;
@@ -195,19 +195,19 @@ dt{
     margin-left: -0.5em;
 }
 .add-favourite{
-    background: url(../assets/SVG/favourite.svg) no-repeat center;
+    background: url(img/svg/favourite.svg) no-repeat center;
     height: 4em;
     width: 2.5em;
     border:none ;  
 }
 .only-cart{
-    background: url(../assets/SVG/only-cart.svg) no-repeat center;
+    background: url(img/svg/only-cart.svg) no-repeat center;
     height: 2.5em;
     width: 3em;
     cursor: pointer;
 }
 .favourite-sm{
-    background: url(../assets/SVG/fav-white.svg) no-repeat center;
+    background: url(img/svg/fav-white.svg) no-repeat center;
     height: 2.5em;
     width: 2.5em;
     cursor: pointer;
