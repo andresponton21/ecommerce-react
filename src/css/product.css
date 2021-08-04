@@ -206,6 +206,12 @@ dt{
     width: 3em;
     cursor: pointer;
 }
+.addFav{
+    margin-right: 0.5em;
+    color: white;
+    background-color: red;
+    border-radius: 0.5em;
+  }
 .favourite-sm{
     background: url(img/svg/fav-white.svg) no-repeat center;
     height: 2.5em;

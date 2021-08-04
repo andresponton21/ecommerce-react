@@ -202,6 +202,17 @@ fieldset{
   padding-left: 1.5em;
   cursor: pointer;
 } 
+.addFav{
+  margin-right: 0.5em;
+  color: white;
+  background-color: red;
+  border-radius: 0.5em;
+}
+.added-to-cart{
+  color: white;
+  background-color: gray;
+  border-radius: 50%;
+}
 input:checked + .radio-button{
   background: url(img/svg/unchecked-readio.svg) no-repeat left;
   padding-left: 1.5em;
@@ -278,6 +289,7 @@ ins{
   height: 4em;
   width: 2.5em;
   border:none ;  
+  
 }
 .only-cart{
   background: url(img/svg/only-cart.svg) no-repeat center;

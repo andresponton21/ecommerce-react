@@ -19,6 +19,8 @@ const Product = () => {
   //console.log(slug)
 
   const newProduct = useContext(UserContext)
+  const cartArr = newProduct.userCart
+  const favArr = newProduct.userFav
   
   const productArray = newProduct.updateProduct(slug)
   const singleProduct = productArray.map(prod => <SingleProductRow key={prod.id} data={prod} />)
@@ -60,8 +62,8 @@ const Product = () => {
 
      
       <ul className="your-products">
-        <Link to={`/favourite`}><li className="favourite-sm"><span  aria-label="Favourites"></span></li></Link>
-        <Link to={`/cart`}><li className="only-cart"><span className="added-to-cart" aria-label="Items in your cart"></span></li></Link>
+        <Link to={`/favourite`}><li className="favourite-sm"><span  aria-label="Favourites" className="addFav">{favArr.length}</span></li></Link>
+        <Link to={`/cart`}><li className="only-cart"><span className="added-to-cart" aria-label="Items in your cart">{cartArr.length}</span></li></Link>
       </ul>
     </header>
   </div>

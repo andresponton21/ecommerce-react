@@ -8,6 +8,10 @@ import Cartrow from 'components/Cartrow'
 
 
 const Header = ({search, setSearch}) => {
+
+  // const cartProducts = useContext(UserContext)
+  // const cartCount = cartProducts.currCart
+
   const {query} = search
  
   const handleQueryChange = (event) => {
@@ -18,11 +22,11 @@ const Header = ({search, setSearch}) => {
     })
   }
 
-  // const cartProduct = useContext(UserContext)
-  // const cartArr = cartProduct.userCart
+    const cartProduct = useContext(UserContext)
+    const cartArr = cartProduct.userCart
+    const favArr = cartProduct.userFav
   
-  // const cartProd = cartArr.map(prod => <Cartrow key={prod.id} data={prod} />)
-  // console.log(cartProd)
+  
   
   return (
     <div className="top-head">
@@ -58,8 +62,8 @@ const Header = ({search, setSearch}) => {
 
      
       <ul className="your-products">
-        <Link to={`/favourite`}><li className="favourite-sm"><span  aria-label="Favourites"></span></li></Link>
-        <Link to={`/cart`}><li className="only-cart"><span className="added-to-cart" aria-label="Items in your cart"></span></li></Link>
+        <Link to={`/favourite`}><li className="favourite-sm"><span  aria-label="Favourites" className="addFav">{favArr.length}</span></li></Link>
+        <Link to={`/cart`}><li className="only-cart"><span className="added-to-cart" aria-label="Items in your cart">{cartArr.length}</span></li></Link>
       </ul>
     </header>
   </div>

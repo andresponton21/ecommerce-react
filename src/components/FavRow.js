@@ -11,7 +11,8 @@ const FavRow = ({data}) => {
   
   const {id, name, price, filters, photo, description, linkTo, category, rating} = data
   
-
+  const favProduct = useContext(UserContext)
+  const handleDelItemFav = favProduct.handleDelItemFav
 
  
   return (
@@ -26,7 +27,7 @@ const FavRow = ({data}) => {
         <p>{description}</p>
       
         
-          <button className="see-more"> Delete</button>
+          <button className="see-more" onClick={(event) => handleDelItemFav(event, name)}> Delete</button>
     </header>
    
    

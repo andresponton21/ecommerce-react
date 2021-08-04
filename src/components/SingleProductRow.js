@@ -57,7 +57,7 @@ const SingleProductRow = ({data}) => {
         </ol>
         </fieldset>
     </form>
-    <footer className="product-options add-product">
+    <footer className="product-options">
         <button type="button" className="add-to-cart" onClick={(event) => handleAddCart(event, name)}></button>
         <button type="button" className="add-favourite" onClick={(event) => handleAddFav(event, name)}></button>
     </footer> 

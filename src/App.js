@@ -9,44 +9,53 @@ import Cartpage from 'pages/Cartpage'
 import Favourite from 'pages/Favourite'
 
 
-
-
-
-const userCart = [];
-const userFav = [];
-
-const updateProduct = (name) => {
-  // Go update the database
-  const fproduct = productsData.filter(product => product.name.includes(name))
-  return fproduct
-}
-const handleAddCart =  (event, name) => {
-
-  const cproduct = productsData.find(product => product.name.includes(name))
-  userCart.push(cproduct)
-  
-}
-const handleDelItemCart =  (event, name) => {
-
-  const cproduct = productsData.find(product => product.name.includes(name))
-  userCart.pop(cproduct)
-  
-}
-const handleAddFav =  (event, name) => {
-  const cproduct = productsData.find(product => product.name.includes(name))
-  userFav.push(cproduct)
-  
-}
-
-
-
 const App = () => {
+
+  
+  
+  const [userCart, setUserCart] = useState([]);
+  const [userFav, setUserFav] = useState([]);
+
+  const updateProduct = (name) => {
+    const fproduct = productsData.filter(product => product.name.includes(name))
+    return fproduct
+  }
+//handle cart
+  const handleAddCart =  (event, name) => {
+    const cproduct = productsData.find(product => product.name.includes(name))
+
+    setUserCart([...userCart, cproduct])
+   
+  }
+//delete products
+  const handleDelItemCart =  (event, name) => {
+    
+    const delProduct = userCart.filter(product => !product.name.includes(name))
+    
+    setUserCart([...delProduct])
+
+  }
+
+  //handle fav
+  const handleAddFav =  (event, name) => {
+    const cproduct = productsData.find(product => product.name.includes(name))
+    setUserFav([...userFav, cproduct])
+    
+  }
+  const handleDelItemFav =  (event, name) => {
+    console.log(userFav)
+    const delProductFav = userFav.filter(product => !product.name.includes(name))
+    
+    setUserFav([...delProductFav])
+
+  }
+
   return (
        
         <Router>
         <UserContext.Provider value={{data:productsData, updateProduct:updateProduct, 
           handleAddCart:handleAddCart, userCart:userCart, 
-          userFav:userFav, handleAddFav:handleAddFav, handleDelItemCart:handleDelItemCart }}>
+          userFav:userFav, handleAddFav:handleAddFav, handleDelItemCart:handleDelItemCart, handleDelItemFav:handleDelItemFav}}>
           <Switch>
             <Route exact path="/"><Products data={productsData} /></Route>
             <Route path="/product/:slug"><Product/></Route>
