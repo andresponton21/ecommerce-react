@@ -43,11 +43,21 @@ const App = () => {
     
   }
   const handleDelItemFav =  (event, name) => {
-    console.log(userFav)
+    
     const delProductFav = userFav.filter(product => !product.name.includes(name))
     
     setUserFav([...delProductFav])
 
+  }
+  const handleSwitchToCart =  (event, name) => {
+    const cproduct = productsData.find(product => product.name.includes(name))
+
+    setUserCart([...userCart, cproduct])
+
+    const delProductFav = userFav.filter(product => !product.name.includes(name))
+    
+    setUserFav([...delProductFav])
+   
   }
 
   return (
@@ -55,7 +65,7 @@ const App = () => {
         <Router>
         <UserContext.Provider value={{data:productsData, updateProduct:updateProduct, 
           handleAddCart:handleAddCart, userCart:userCart, 
-          userFav:userFav, handleAddFav:handleAddFav, handleDelItemCart:handleDelItemCart, handleDelItemFav:handleDelItemFav}}>
+          userFav:userFav, handleAddFav:handleAddFav, handleDelItemCart:handleDelItemCart, handleDelItemFav:handleDelItemFav, handleSwitchToCart:handleSwitchToCart}}>
           <Switch>
             <Route exact path="/"><Products data={productsData} /></Route>
             <Route path="/product/:slug"><Product/></Route>

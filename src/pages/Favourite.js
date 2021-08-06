@@ -34,7 +34,7 @@ const Cartpage = () => {
       </button>
       <nav aria-label="Primary" id="nav-menu" className="navigation">
         <ul className="menu">
-        <Link to={`/`} className="see-more"> Continue Shopping</Link>
+        <Link to={`/`} className="see-more" style={{fontSize:`1.5em`}}> Continue Shopping</Link>
         </ul>
       </nav>
 
