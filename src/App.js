@@ -9,11 +9,14 @@ import Cartpage from 'pages/Cartpage'
 import Favourite from 'pages/Favourite'
 import 'material-design-icons/iconfont/material-icons.css'
 import firebase from 'utils/firebase'
+import Loading from 'components/Loading'
 
 
 
 
 const App = () => {
+
+  const [loading, setLoading] = useState(false)
 
   const [productsData, setProductsData] = useState([])
   const db = firebase.firestore()
@@ -21,15 +24,15 @@ const App = () => {
   useEffect(() => {
     const loadData = async () => {
 
-      console.log(`Loading...`)
-      //setLoading(true)
+      
+      setLoading(true)
       
       await db.collection(`productsData`).get().then((snapshot) => {
         // setCoursesData(snapshot.docs.reduce((courses, doc) => [...courses, doc.data()], []))
         setProductsData(snapshot.docs.map(doc => doc.data()))
       })
       
-     // setLoading(false)
+     setLoading(false)
     }
     
     loadData()
@@ -113,7 +116,8 @@ const App = () => {
   }
 
   return (
-       
+    <>
+        {(loading) && <Loading>Loading...</Loading>}
         <Router>
         <UserContext.Provider value={{data:productsData, updateProduct:updateProduct, 
           handleAddCart:handleAddCart, userCart:userCart, 
@@ -133,7 +137,7 @@ const App = () => {
           </Switch>
         </UserContext.Provider>
       </Router>
-  
+  </>
   )
 }
 
