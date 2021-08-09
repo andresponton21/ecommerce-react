@@ -45,6 +45,7 @@ module.exports = {
       img: path.resolve(__dirname, 'src/img/'),
       pages: path.resolve(__dirname, 'src/pages/'),
       contexts: path.resolve(__dirname, 'src/contexts/'),
+      utils: path.resolve(__dirname, 'src/utils/')
     }
   }
 }

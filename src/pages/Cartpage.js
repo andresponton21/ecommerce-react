@@ -14,7 +14,7 @@ const Cartpage = () => {
 
   const cartProduct = useContext(UserContext)
   const cartArr = cartProduct.userCart
-  
+  const favArr = cartProduct.userFav
  
   const cartProd = cartArr.map(prod => <Cartrow key={prod.id} data={prod} />)
 
@@ -53,7 +53,8 @@ const Cartpage = () => {
 
      
       <ul className="your-products">
-        <Link to={`/favourite`}><li className="favourite-sm"><span  aria-label="Favourites"></span></li></Link>
+        <Link to={`/favourite`}><li className="favourite-sm"><span  aria-label="Favourites" className="addFav">{favArr.length}</span></li></Link>
+        <Link to={`/cart`}><li className="only-cart"><span className="added-to-cart" aria-label="Items in your cart">{cartArr.length} </span></li></Link>
         
       </ul>
     </header>

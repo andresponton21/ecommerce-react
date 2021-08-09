@@ -13,11 +13,12 @@ import logo from 'img/logo.png'
 const Cartpage = () => {
 
   const cartProduct = useContext(UserContext)
-  const cartArr = cartProduct.userFav
+  const favArr = cartProduct.userFav
+  const cartArr = cartProduct.userCart
   
   
  
-  const cartProd = cartArr.map(prod => <FavRow key={prod.id} data={prod} />)
+  const cartProd = favArr.map(prod => <FavRow key={prod.id} data={prod} />)
 
 
 
@@ -44,7 +45,7 @@ const Cartpage = () => {
      
       <ul className="your-products">
         
-        <Link to={`/cart`}><li className="only-cart"><span className="added-to-cart" aria-label="Items in your cart"></span></li></Link>
+        <Link to={`/cart`}><li className="only-cart"><span className="added-to-cart" aria-label="Items in your cart">{cartArr.length} </span></li></Link>
 
         
       </ul>

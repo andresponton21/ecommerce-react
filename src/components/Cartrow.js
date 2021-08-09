@@ -13,6 +13,7 @@ const Cartrow = ({data}) => {
   
   const cartProduct = useContext(UserContext)
   const handleDelItemCart = cartProduct.handleDelItemCart
+  const handleSwitchToFav = cartProduct.handleSwitchToFav
   
  
   return (
@@ -27,7 +28,8 @@ const Cartrow = ({data}) => {
         <p>{description}</p>
       
         
-          <button className="see-more" onClick={(event) => handleDelItemCart(event, name)}> Delete</button>
+        <button className="see-more" style={{background:`red`}} onClick={(event) => handleDelItemCart(event, name)}> Delete</button>
+        <button className="see-more" style={{marginLeft:`0.25em`}} onClick={(event) => handleSwitchToFav(event, name)}> Add to Favourites</button>
     </header>
    
    

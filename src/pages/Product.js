@@ -70,7 +70,7 @@ const Product = () => {
 
  
   <section  className="products">
-    <Link to={`/`}>Go Back </Link>
+    <Link to={`/`} style={{fontSize:"1.5em"}}>Go Back </Link>
     {singleProduct}
   </section>
   <Footer />

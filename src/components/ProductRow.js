@@ -60,6 +60,8 @@ const ProductRow = ({data}) => {
     <footer className="product-options add-product">
         <button type="button" className="add-to-cart" onClick={(event) => handleAddCart(event, name)}></button>
         <button type="button" className="add-favourite" onClick={(event) => handleAddFav(event, name)}></button>
+        <span className="material-icons">favorite</span>
+
     </footer> 
     </article>
     </>
