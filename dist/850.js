@@ -1,0 +1,1 @@
+(self.webpackChunkreact_project=self.webpackChunkreact_project||[]).push([[850],{4850:(c,e,a)=>{"use strict";a.r(e),a.d(e,{default:()=>t});const t=a.p+"a9c63fc0104c5319c7e5a51553f29af5.jpg"}}]);
