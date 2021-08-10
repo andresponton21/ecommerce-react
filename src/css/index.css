@@ -110,6 +110,9 @@ font-size: var(--pad-and-gap);
 .fav, .cart{
   color:white;    
 }
+.becomefav{
+  color: red;
+}
 .menu{
   text-align: left;
   display: flex;
@@ -267,19 +270,22 @@ ins{
 }
 .product-options li{
   margin-bottom: var(--pad-and-gap-half);
+
 }
 .product-options .add-to-cart{
   margin-left: -0.5em;
 }
+
 .form-options{
   margin-bottom: 3em;
   margin-top: 0.75em;
 }
 .add-to-cart{
   background: url(img/svg/add-to-cart-button.svg) no-repeat;
-  height: 4em;
+  height: 4.5em;
   width: 12.5em;
   border: none;
+
 }
 .add-product{
   position: absolute;

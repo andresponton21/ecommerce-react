@@ -3,6 +3,8 @@ import fourstars from 'img/svg/fourstars.svg'
 import Image from 'components/Image'
 import {Link} from 'react-router-dom'
 import UserContext from 'contexts/user'
+import styled from 'styled-components'
+
 
 
  
@@ -14,6 +16,7 @@ const ProductRow = ({data}) => {
   
 
   const cartProduct = useContext(UserContext)
+  const favArr = cartProduct.userFav
   const handleAddCart = cartProduct.handleAddCart
   const handleAddFav = cartProduct.handleAddFav
  
@@ -59,13 +62,26 @@ const ProductRow = ({data}) => {
     </form>
     <footer className="product-options add-product">
         <button type="button" className="add-to-cart" onClick={(event) => handleAddCart(event, name)}></button>
-        <button type="button" className="add-favourite" onClick={(event) => handleAddFav(event, name)}></button>
-        <span className="material-icons">favorite</span>
+
+        <Favourite  onClick={(event) => handleAddFav(event, name)}>
+        <span className={`material-icons ${(favArr.find(pr=>pr.name.includes(name))) && `becomefav`}`}>favorite</span>
+
+        </Favourite>
 
     </footer> 
     </article>
     </>
   )
 }
+
+const Favourite = styled.button`
+	padding-bottom:0;
+  margin: 1em;
+	background: none;
+	border: none;
+	color: black;
+  
+`
+
 
 export default ProductRow
